@@ -1,18 +1,17 @@
 import React, { Component } from 'react'
 import Login from './components/loging';
 import Header from './components/Header'
+import Test from './components/Test';
 
-export class App extends Component {
+class App extends Component {
 
     constructor() {
 
         super()
 
         this.state = {
-            usuario: "",
-            contador: 1,
-            respuestas: [],
-            solucion: ['a', 'b', 'c', 'c', 'c', 'a', 'c', 'b']
+            usuario: "jose ramos",
+            
         }
     }
     handreDatos = (e) => {
@@ -33,6 +32,7 @@ export class App extends Component {
             return (
                 <React.StrictMode>
                     <Header user={this.state.usuario} />
+                    <Test/>
                 </React.StrictMode>
             )
         }

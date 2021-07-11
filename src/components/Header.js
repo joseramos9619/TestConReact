@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class Header extends Component {
+class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -21,7 +21,7 @@ export class Header extends Component {
       <header>
         <nav>
           <h2><i className="far fa-user"></i> {this.props.user}</h2>
-          <i className="fas fa-sign-out-alt"></i>
+          <i className="fas fa-sign-out-alt salir"></i>
         </nav>
       </header>
       )
