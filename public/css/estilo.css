@@ -1,8 +1,8 @@
 :root{
-  --color1: rgb(139, 115, 64);
+  --color1: rgb(46, 90, 170);
   --color2: white;
   --color3: rgb(8, 8, 32);
-  --color4: rgb(163, 150, 150);
+  --color4: rgb(150, 152, 163);
 }
 
 * {
