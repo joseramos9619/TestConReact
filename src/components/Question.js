@@ -4,7 +4,6 @@ import Itemquest from './Itemquest'
 class Question extends Component {
 
     render() {
-        console.log(this.props)
         return (
             <div className="preguntas">
                 <Itemquest value="1" cont={this.props.cont}/>

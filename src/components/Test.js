@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import Question from './Question'
+import Preguntas from './Pregutas'
 
 class Test extends Component {
 
-    constructor() {
+    constructor(props) {
 
-        super()
+        super(props)
 
         this.state = {
             contador: 1,
@@ -13,24 +14,30 @@ class Test extends Component {
             solucion: ['a', 'b', 'c', 'c', 'c', 'a', 'c', 'b']
         }
     }
-    Auntacont = (e) => {
-        let cont = this.state.contador
-        this.setState({
-            contador: cont++
-        })
+    Aumentacont = () => {
+        if (this.state.contador < 8) {
+            this.setState({
+                contador: this.state.contador + 1
+            });
+        }
     }
-    Diminuircont = (e) => {
-        let cont = this.state.contador
-        this.setState({
-            contador: cont--
-        })
+    Diminuircont = () => {
+        if (this.state.contador > 1) {
+            this.setState({
+                contador: this.state.contador - 1
+            });
+        }
     }
     render() {
 
         return (
             <React.StrictMode>
                 <main>
-                    <Question cont={this.state.contador}/>
+                    <Question cont={this.state.contador} />
+                    <div className="progress">
+                        <progress id="cargar" max="8" value={this.state.contador}></progress>
+                    </div>
+                    <Preguntas cont={this.state.contador} ant={this.Diminuircont} sig={this.Aumentacont}/>
                 </main>
             </React.StrictMode>
         )
