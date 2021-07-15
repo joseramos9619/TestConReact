@@ -1,28 +1,20 @@
 import React, { Component } from 'react'
 
 class Itemquest extends Component {
-    constructor() {
-        super()
-        this.state = {
-        }
-    }
 
     render() {
-        let item = ""
-        for (let i = 1; i <= 8; i++) {
-            if (i === this.props.cont) {
-                item += `<div style="background-color: rgb(92, 204, 92)">${i}</div>`
-            }
-            else {
-                item += `<div>${i}</div>`
-            }
+        let clase = "";
+
         
+        if (parseInt( this.props.value,10) === this.props.cont) {
+            clase = "activo";
         }
-        console.log(item)
+        else {
+            clase = "noacti";
+        }
+
         return (
-            <React.StrictMode>
-                
-            </React.StrictMode>
+            <div className={clase}>{this.props.value}</div>
         )
     }
 }

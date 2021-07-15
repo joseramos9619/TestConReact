@@ -45,7 +45,6 @@ main {
   box-shadow: 1px 1px 2px black;
 }
 .preguntas div {
-  background-color: white;
   margin: 2px;
   text-align: center;
   border-radius: 4px;
@@ -168,6 +167,13 @@ progress {
 .resultado span {
   text-align: center;
 }
+.activo{
+  background-color: rgb(92, 204, 92);
+}
+.noacti{
+  background-color: white;
+}
+
 @media only screen and (max-width: 600px) {
   nav {
     font-size: 120%;
