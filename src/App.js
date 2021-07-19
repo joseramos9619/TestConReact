@@ -10,7 +10,7 @@ class App extends Component {
         super()
 
         this.state = {
-            usuario: "jose ramos",
+            usuario: "",
             
         }
     }
@@ -32,7 +32,7 @@ class App extends Component {
             return (
                 <React.StrictMode>
                     <Header user={this.state.usuario} />
-                    <Test/>
+                    <Test salir = {this.handreDatos}/>
                 </React.StrictMode>
             )
         }

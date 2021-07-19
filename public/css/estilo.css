@@ -118,6 +118,7 @@ button:hover {
   margin: 6% 20%;
   border-radius: 5px;
   box-shadow: 1px 1px 6px var(--color3);
+  background-color: var(--color2);
 }
 .login-header {
   background-color: var(--color1);
@@ -165,6 +166,7 @@ progress {
   margin: 6% 20%;
   border-radius: 5px;
   box-shadow: 1px 1px 6px var(--color3);
+  background-color: var(--color2);
   padding: 1%;
 }
 .resultado div {
@@ -182,6 +184,12 @@ progress {
 }
 .noacti{
   background-color: var(--color2);
+}
+.error{
+  background-color: crimson;
+}
+.bien{
+  background-color: green;
 }
 
 @media only screen and (max-width: 600px) {

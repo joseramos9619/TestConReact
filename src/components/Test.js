@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Question from './Question'
 import Preguntas from './Pregutas'
+import Solucion from './Solucion'
 
 let respuestas = ['', '', '', '', '', '', '', ''];
 
@@ -22,7 +23,7 @@ class Test extends Component {
     }
 
     Aumentacont = () => {
-        if (this.state.contador < 8) {
+        if (this.state.contador <= 8) {
             this.setState({
                 contador: this.state.contador + 1
             });
@@ -35,17 +36,13 @@ class Test extends Component {
             });
         }
     }
-    render() {
-        let r = 0;
-        console.log("r" + r)
-        for (let i = 0; i < respuestas.length; i + 1) {
-            let aux = 0;
-            if (respuestas[i] !== "") {
-                aux++;
-            }
-            r = aux
-        }
 
+    salir =()=>{
+        this.props.salir("")
+    }
+
+    render() {
+        let r=this.state.contador
         if (r < 8) {
             console.log(respuestas)
             return (
@@ -61,36 +58,36 @@ class Test extends Component {
             )
         }
         else {
-            console.log(respuestas)
+            let c=0;
+            let nota=0;
+            for (let i = 0; i < 8; i++) {
+                if(respuestas[i]===this.state.solucion[i]){
+                    c++;
+                }
+            }
+            if(c>0){
+                nota = c*0.625;
+            }
+            let a ='reprobado'
+            let clase='error';
+            if(nota>3){
+                clase='bien'
+                a="aprobado"
+            }
             return (
                 <div className="resultado">
                     <h2>Resultados</h2>
-                    <span id="rtest"></span>
-                    <div id="res-1">
-                        Respuesta correcta: 1. a) En la boca
-                    </div>
-                    <div id="res-2">
-                        Respuesta correcta: 2.  b)	El esófago
-                    </div>
-                    <div id="res-3">
-                        Respuesta correcta: 3. c)	Intestino delgado
-                    </div>
-                    <div id="res-4">
-                        Respuesta correcta: 4. c) Intestino grueso
-                    </div>
-                    <div id="res-5">
-                        Respuesta correcta: 5. c) Nacen, crecen, se reproducen y mueren
-                    </div>
-                    <div id="res-6">
-                        Respuesta correcta: 6. a)	Raiz
-                    </div>
-                    <div id="res-7">
-                        Respuesta correcta: 7. c)	Flores, fruto, tallo, hojas y raíz
-                    </div>
-                    <div id="res-8">
-                        Respuesta correcta: 8. b)	El tronco
-                    </div>
-                    <button id="salir-2">Salir</button>
+                    <span>{c}/8</span>
+                    <span>nota: {nota}</span><span className={clase}> {a}</span>
+                    <Solucion sol='1' r={respuestas} s={this.state.solucion}/>
+                    <Solucion sol='2' r={respuestas} s={this.state.solucion}/>
+                    <Solucion sol='3' r={respuestas} s={this.state.solucion}/>
+                    <Solucion sol='4' r={respuestas} s={this.state.solucion}/>
+                    <Solucion sol='5' r={respuestas} s={this.state.solucion}/>
+                    <Solucion sol='6' r={respuestas} s={this.state.solucion}/>
+                    <Solucion sol='7' r={respuestas} s={this.state.solucion}/>
+                    <Solucion sol='8' r={respuestas} s={this.state.solucion}/>
+                    <button onClick={this.salir}>Salir</button>
                 </div>
             )
         }
