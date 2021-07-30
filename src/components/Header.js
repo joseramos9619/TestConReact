@@ -8,8 +8,10 @@ class Header extends Component {
     }
   }
   salir = () => {
-    console.log("el progreso no sera guardado, debra iniciar el tes de nuevo")
-    this.props.salir("")
+    let res=window.confirm("el progreso no sera guardado, debra iniciar el tes de nuevo")
+    if(res===true){
+      this.props.salir("")
+    }
 }
   render() {
     if (this.props.user === "") {
