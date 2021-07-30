@@ -31,7 +31,7 @@ class App extends Component {
         else {
             return (
                 <React.StrictMode>
-                    <Header user={this.state.usuario} />
+                    <Header user={this.state.usuario} salir = {this.handreDatos}/>
                     <Test salir = {this.handreDatos}/>
                 </React.StrictMode>
             )
